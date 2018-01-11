@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rfrancalangia/wikiwormhole/issues"
   },
-  "homepage": "https://github.com/rfrancalangia/wikiwormhole#readme"
+  "homepage": "https://github.com/rfrancalangia/wikiwormhole#readme",
+  "dependencies": {
+    "random-words": "0.0.1"
+  }
 }

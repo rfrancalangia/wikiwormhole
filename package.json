@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rfrancalangia/wikiwormhole#readme",
   "dependencies": {
-    "random-words": "0.0.1"
+    "random-words": "0.0.1",
+    "wikijs": "^4.5.0"
   }
 }

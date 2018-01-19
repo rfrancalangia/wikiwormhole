@@ -10,12 +10,12 @@ http.createServer(function(req, res) {
   });
   var word = randomwords();
   var html = "";
-  res.write('<!doctype html>\n<html lang="en">\n' +
-    '\n<meta charset="utf-8">\n<title>Wiki Wormhole</title>\n' +
-    '<style type="text/css">* {font-family:arial, sans-serif;}</style>\n' +
-    '\n\n<h1>Wormhole, suck one</h1>\n' +
-    '<div id="content"></div>' +
-    '\n\n'+word);
+  // res.write('<!doctype html>\n<html lang="en">\n' +
+  //   '\n<meta charset="utf-8">\n<title>Wiki Wormhole</title>\n' +
+  //   '<style type="text/css">* {font-family:arial, sans-serif;}</style>\n' +
+  //   '\n\n<h1>Wormhole, suck one</h1>\n' +
+  //   '<div id="content"></div>' +
+  //   '\n\n'+word);
     // wiki().page(word).then(page => page.html()).then(console.log);
     // console.log(html);
     // console.log(page.info());
@@ -28,12 +28,19 @@ http.createServer(function(req, res) {
      console.log("An error occurred[query=%s, error=%s]", query, err);
      return;
    }
+   res.write('<!doctype html>\n<html lang="en">\n' +
+     '\n<meta charset="utf-8">\n<title>Wiki Wormhole</title>\n' +
+     '<style type="text/css">* {font-family:arial, sans-serif;}</style>\n' +
+     '\n\n<h1>Wormhole, suck one</h1>\n' +
+     '<div id="content"></div>' +
+     '\n\n'+word+htmlWikiText);
+     res.end();
    // console.log("Query successful[query=%s, html-formatted-wiki-text=%s]", query, htmlWikiText);
    // const $ = cheerio.load(htmlWikiText);
    // res.write(htmlWikiText);
    // $.html();
-   console.log(htmlWikiText);
+   // console.log(htmlWikiText);
  });
-  res.end();
+ // res.write(htmlWikiText);
 }).listen(8888, '127.0.0.1');
 console.log('Server running at http://127.0.0.1:8888');
